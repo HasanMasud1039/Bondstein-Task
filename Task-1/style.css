@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    /* background: rgb(245, 245, 245); */
+    background: linear-gradient(to top, rgb(228, 248, 226), #ffffff);
+}
+
+main {
+    margin: auto;
+    min-height: 100vh;
+    width: 80%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: url('https://wallpaperaccess.com/full/4048349.jpg')  center center fixed;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    min-height: 66px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    row-gap: 2px;
+}
+
+/* nav{
+    opacity: .9;
+} */
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(24, 162, 11);
+    text-shadow: 1px 1px 1px rgb(125, 52, 34);
+    font-size: 2em;
+    font-weight: 800;
+    padding-top: 4px;
+    text-decoration: none;
+}
+
+.logoImg {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    background-size: cover;
+    background: url('https://i.ibb.co/wpHh1kp/tree-removebg-preview-1.png') no-repeat center center;
+}
+
+header ul {
+    position: relative;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+    float: left;
+}
+
+header ul li a {
+    font-size: 1.1em;
+    padding: 20px 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li a:hover {
+    background: rgba(205, 236, 198, 0.645);
+}
+
+header ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: rgb(247, 250, 244);
+    display: none;
+}
+
+header ul li:hover>ul {
+    display: block;
+}
+
+header ul li ul li {
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+header.minus ul li ul li ul {
+    top: 0;
+    left: 200px;
+    background: rgb(238, 236, 236);
+    /* background: red; */
+}
+
+header.plus .plusItems {
+    display: none;
+}
+
+header.plus #plus {
+    display: none;
+}
+
+#minus {
+    display: none;
+}
+
+header.plus #minus {
+    display: block;
+}
+
+
+/*Responsiveness*/
+@media (max-width: 900px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: row;
+        background: rgb(190, 226, 227);
+    }
+
+    .logo {
+        font-weight: 500;
+        color: rgb(10, 68, 7);
+    }
+    main {
+        min-height: 80vh;
+        width: 100%;
+    }
+    header nav {
+        position: absolute;
+        display: none;
+        width: 60%;
+        top: 66px;
+        left: 0;
+        background: rgb(234, 231, 231);
+    }
+
+    header.active nav {
+        display: inline;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li ul {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+
+    header nav ul li:hover ul li {
+        background: rgb(217, 221, 218);
+    }
+
+    header.minus ul li ul li ul {
+        left: 0;
+    }
+
+    .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuToggle::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        transform: translateY(-10px);
+        box-shadow: 0 10px #f9f8f8;
+    }
+
+    .menuToggle::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        transform: translateY(10px);
+    }
+
+    header.active .menuToggle::before {
+        transform: rotate(45deg);
+        box-shadow: 0 0 #bdacac;
+    }
+
+    header.active .menuToggle::after {
+        transform: rotate(315deg);
+    }
+}
